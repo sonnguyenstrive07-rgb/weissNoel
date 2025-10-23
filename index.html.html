@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Nguyễn Trọng Sơn — Profile</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg1: #0f172a;
+      --bg2: #071029;
+      --glass: rgba(255,255,255,0.06);
+      --accent: linear-gradient(90deg,#7c3aed 0%,#06b6d4 100%);
+      --card-shadow: 0 10px 30px rgba(2,6,23,0.6);
+      --glass-border: rgba(255,255,255,0.06);
+      --glass-2: rgba(255,255,255,0.03);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,'Helvetica Neue',Arial;color:#e6eef8;background:radial-gradient(1200px 600px at 10% 10%, rgba(124,58,237,0.12), transparent), radial-gradient(900px 500px at 90% 90%, rgba(6,182,212,0.06), transparent), linear-gradient(180deg,var(--bg1),var(--bg2));-webkit-font-smoothing:antialiased}
+
+    .container{max-width:1100px;margin:48px auto;padding:28px;display:grid;grid-template-columns:360px 1fr;gap:28px}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border:1px solid var(--glass-border);backdrop-filter:blur(10px);border-radius:18px;padding:22px;box-shadow:var(--card-shadow)}
+
+    /* SIDEBAR */
+    .profile{display:flex;flex-direction:column;align-items:center;text-align:center}
+    .avatar{width:148px;height:148px;border-radius:50%;overflow:hidden;border:6px solid rgba(255,255,255,0.06);box-shadow:0 10px 30px rgba(2,6,23,0.6);margin-top:-72px}
+    .avatar img{width:100%;height:100%;object-fit:cover;display:block}
+    .name{font-size:20px;font-weight:800;margin-top:12px}
+    .role{font-size:13px;color:#bcd4ec;margin-top:6px}
+    .bio{font-size:13px;color:#9fb5d0;margin-top:12px;line-height:1.4}
+    .tags{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:12px}
+    .tag{padding:6px 10px;border-radius:999px;font-weight:600;font-size:12px;background:linear-gradient(90deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));border:1px solid rgba(255,255,255,0.02)}
+
+    .socials{display:flex;gap:10px;margin-top:14px}
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:10px 14px;border-radius:12px;border:0;background:var(--glass);color:#e6eef8;font-weight:600;cursor:pointer}
+    .btn.primary{background:var(--accent);background-size:200% 200%;animation:shift 6s linear infinite}
+    @keyframes shift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+
+    /* MAIN */
+    .hero{display:flex;justify-content:space-between;align-items:center;gap:18px}
+    .heading{font-size:28px;font-weight:800;line-height:1}
+    .sub{color:#9fb5d0}
+    .metrics{display:flex;gap:12px}
+    .metric{background:var(--glass-2);padding:10px 14px;border-radius:12px;text-align:center}
+    .metric .v{font-weight:800;font-size:18px}
+    .cols{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:18px}
+
+    .skills .skill{margin-bottom:12px}
+    .skill .meta{display:flex;justify-content:space-between;font-size:13px;color:#c3d7ee}
+    .progress{height:10px;background:linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:999px;overflow:hidden;margin-top:6px}
+    .progress > i{display:block;height:100%;border-radius:999px;background:var(--accent);transform-origin:left center}
+
+    .projects{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+    .project{padding:12px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.02)}
+    .project h4{margin:0 0 6px 0}
+    .project p{margin:0;font-size:13px;color:#9fb5d0}
+
+    .contact{display:flex;flex-direction:column;gap:12px}
+    .field{display:flex;flex-direction:column}
+    .field input,.field textarea{background:transparent;border:1px solid rgba(255,255,255,0.04);padding:10px;border-radius:10px;color:#e6eef8}
+    .small{font-size:12px;color:#9fb5d0}
+
+    footer{margin-top:18px;text-align:center;color:#7e9bb8;font-size:13px}
+
+    /* responsive */
+    @media(max-width:980px){.container{grid-template-columns:1fr;padding:18px}.avatar{width:120px;height:120px;margin-top:-60px}}
+  </style>
+</head>
+<body>
+  <div style="position:fixed;inset:0;pointer-events:none;opacity:0.08">
+    <svg width="100%" height="100%" preserveAspectRatio="none">
+      <defs>
+        <linearGradient id="g1" x1="0" x2="1">
+          <stop offset="0%" stop-color="#7c3aed" stop-opacity="1"/>
+          <stop offset="100%" stop-color="#06b6d4" stop-opacity="1"/>
+        </linearGradient>
+      </defs>
+      <circle cx="15%" cy="20%" r="380" fill="url(#g1)" />
+      <circle cx="85%" cy="85%" r="320" fill="#0ea5ca" />
+    </svg>
+  </div>
+
+  <main class="container">
+    <aside class="card profile">
+      <div style="height:72px"></div>
+      <div class="avatar" title="Thay ảnh avatar bằng ảnh của bạn">
+        <img src="" alt="avatar">
+      </div>
+      <div class="name">Nguyễn Trọng Sơn</div>
+      <div class="role">Frontend developer • Designer • Student</div>
+      <p class="bio">Tạo web đẹp, tối ưu trải nghiệm & hiệu suất. Yêu thích animation, UI/UX, và code clean.</p>
+
+      <div class="tags">
+        <span class="tag">HTML</span>
+        <span class="tag">CSS</span>
+        <span class="tag">JavaScript</span>
+        <span class="tag">React</span>
+        <span class="tag">Figma</span>
+      </div>
+
+      <div style="margin-top:14px;display:flex;gap:10px">
+        <button class="btn primary" onclick="downloadCV()">Tải CV</button>
+        <a class="btn" href="#contact" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Liên hệ</a>
+      </div>
+
+      <div style="margin-top:16px;display:flex;gap:10px;align-items:center">
+        <a class="btn" href="#" title="Github">GH</a>
+        <a class="btn" href="#" title="LinkedIn">IN</a>
+        <a class="btn" href="#" title="Behance">BE</a>
+      </div>
+
+      <div style="width:100%;margin-top:18px;text-align:left">
+        <div class="small">Location</div>
+        <div class="small" style="font-weight:700">Việt Nam</div>
+        <div style="height:10px"></div>
+        <div class="small">Availability</div>
+        <div class="small" style="font-weight:700">Open to work</div>
+      </div>
+    </aside>
+
+    <section class="card">
+      <div class="hero">
+        <div>
+          <div class="heading">Xin chào — Tôi là <span style="background:linear-gradient(90deg,#7c3aed,#06b6d4);-webkit-background-clip:text;background-clip:text;color:transparent;">Nguyễn Trọng Sơn</span></div>
+          <div class="sub">Tôi thiết kế và phát triển giao diện web hiện đại, mượt mà và có khả năng mở rộng.</div>
+        </div>
+        <div class="metrics">
+          <div class="metric"><div class="v">4+</div><div class="small">Dự án</div></div>
+          <div class="metric"><div class="v">2k+</div><div class="small">Giờ học</div></div>
+          <div class="metric"><div class="v">98%</div><div class="small">Sự hài lòng</div></div>
+        </div>
+      </div>
+
+      <div class="cols">
+        <div>
+          <h3 style="margin-top:6px">Kỹ năng</h3>
+          <div class="skills">
+            <div class="skill">
+              <div class="meta"><div>HTML & CSS</div><div>95%</div></div>
+              <div class="progress"><i style="width:95%"></i></div>
+            </div>
+            <div class="skill">
+              <div class="meta"><div>JavaScript</div><div>88%</div></div>
+              <div class="progress"><i style="width:88%"></i></div>
+            </div>
+            <div class="skill">
+              <div class="meta"><div>React</div><div>82%</div></div>
+              <div class="progress"><i style="width:82%"></i></div>
+            </div>
+            <div class="skill">
+              <div class="meta"><div>UI/UX Design</div><div>78%</div></div>
+              <div class="progress"><i style="width:78%"></i></div>
+            </div>
+          </div>
+
+          <h3 style="margin-top:12px">Kinh nghiệm</h3>
+          <div style="display:flex;flex-direction:column;gap:10px;margin-top:8px">
+            <div style="padding:12px;border-radius:10px;background:var(--glass-2);border:1px solid rgba(255,255,255,0.02)">
+              <strong>Frontend Intern</strong>
+              <div class="small">Công ty ABC — 2024</div>
+            </div>
+            <div style="padding:12px;border-radius:10px;background:var(--glass-2);border:1px solid rgba(255,255,255,0.02)">
+              <strong>Project Lead</strong>
+              <div class="small">Website trường — 2023</div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h3>Projects nổi bật</h3>
+          <div class="projects" style="margin-top:10px">
+            <div class="project">
+              <h4>Portfolio Web</h4>
+              <p>Thiết kế responsive, animation mượt, tối ưu performance.</p>
+            </div>
+            <div class="project">
+              <h4>Dashboard Admin</h4>
+              <p>Bảng điều khiển realtime, design hệ thống component.</p>
+            </div>
+            <div class="project">
+              <div style="height:8px"></div>
+              <div class="project" style="padding:10px"> <h4>Landing Page</h4><p>Conversion-focused landing page với A/B test.</p></div>
+            </div>
+            <div class="project">
+              <h4>Web App học trực tuyến</h4>
+              <p>Hệ thống quản lý khóa học & bài tập nhỏ gọn.</p>
+            </div>
+          </div>
+
+          <h3 style="margin-top:12px">Công nghệ</h3>
+          <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:8px">
+            <span class="tag">Vite</span>
+            <span class="tag">Tailwind</span>
+            <span class="tag">Node</span>
+            <span class="tag">Figma</span>
+          </div>
+        </div>
+      </div>
+
+      <div id="contact" class="contact" style="margin-top:18px">
+        <h3>Liên hệ</h3>
+        <form onsubmit="event.preventDefault();sendMessage()" style="display:flex;flex-direction:column;gap:8px">
+          <div class="field"><input id="name" placeholder="Tên của bạn" required></div>
+          <div class="field"><input id="email" placeholder="Email" required></div>
+          <div class="field"><textarea id="message" rows="4" placeholder="Lời nhắn"></textarea></div>
+          <div style="display:flex;gap:8px">
+            <button class="btn primary" type="submit">Gửi tin nhắn</button>
+            <button class="btn" type="button" onclick="copyEmail()">Sao chép email</button>
+          </div>
+        </form>
+      </div>
+
+      <footer>© <span id="year"></span> Nguyễn Trọng Sơn — Portfolio trang cá nhân</footer>
+    </section>
+  </main>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    function sendMessage(){
+      const n=document.getElementById('name').value;
+      const e=document.getElementById('email').value;
+      const m=document.getElementById('message').value;
+      alert('Cảm ơn ' + n + '! Tin nhắn đã được ghi nhận. (Đây là bản demo)');
+      // Ghi chú: Nếu muốn gửi thật, nối API email hoặc form backend tại đây.
+      document.getElementById('name').value='';document.getElementById('email').value='';document.getElementById('message').value='';
+    }
+
+    function copyEmail(){
+      navigator.clipboard.writeText('son@example.com').then(()=>alert('Email đã sao chép: son@example.com'))
+    }
+
+    function downloadCV(){
+      const cv = `Nguyễn Trọng Sơn\nFrontend Developer\nEmail: son@example.com\nPhone: +84 9xxxxxxxx\nKỹ năng: HTML, CSS, JS, React`;
+      const blob = new Blob([cv],{type:'text/plain'});
+      const a = document.createElement('a');
+      a.href=URL.createObjectURL(blob);
+      a.download = 'CV-Nguyen-Trong-Son.txt';
+      a.click();
+      URL.revokeObjectURL(a.href);
+    }
+  </script>
+</body>
+</html>
